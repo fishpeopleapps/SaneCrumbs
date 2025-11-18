@@ -1,0 +1,88 @@
+{
+	"name": "SaneCase",
+	"version": "3.2",
+	"author": [
+		"Martin Tournoij (SaneCase)",
+		"Ryan Lane (JSBreadCrumbs)",
+		"Kevin Forbes (JSBreadCrumbs)",
+		"Cindy Cicalese (JSBreadCrumbs)",
+		"Kimberly Brewer (ITSC)"
+	],
+	"description": "sanecase-desc",
+
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
+	"MessagesDirs": {
+		"SaneCase": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"SaneCase": "includes/SaneCase.php",
+		"JSBreadCrumbsHooks": "includes/JSBreadCrumbsHooks.php"
+	},
+	"ConfigRegistry": {
+		"sanecase": "GlobalVarConfig::newInstance"
+	},
+	"ResourceModules": {
+		"ext.JSBreadCrumbs": {
+			"scripts": [
+				"JSBreadCrumbs.js"
+			],
+			"styles": [
+				"JSBreadCrumbs.css"
+			],
+			"dependencies": [
+				"mediawiki.cookie"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "SaneCase/resources"
+	},
+	"Hooks": {
+		"BeforeDisplayNoArticleText": [
+			"SaneCase::onBeforeDisplayNoArticleText"
+		],
+		"BeforePageDisplay": [
+			"JSBreadCrumbsHooks::onBeforePageDisplay"
+		],
+		"GetPreferences": [
+			"JSBreadCrumbsHooks::onGetPreferences"
+		]
+		},
+	"DefaultUserOptions": {
+		"jsbreadcrumbs-showcrumbs": true,
+		"jsbreadcrumbs-numberofcrumbs": 5,
+		"jsbreadcrumbs-horizontal": true,
+		"jsbreadcrumbs-maxlength-horizontal": 40,
+		"jsbreadcrumbs-maxlength-vertical": 20,
+		"jsbreadcrumbs-showaction": false,
+		"jsbreadcrumbs-showsite": false,
+		"jsbreadcrumbs-domain": false
+	},
+
+	"config": {
+	"JSBreadCrumbsHorizontalSeparator": {
+			"value": "|    |"
+		},
+		"JSBreadCrumbsCSSSelectorHorizontal": {
+			"value": {
+				"citizen": "#footer-tagline"
+			}
+		},
+		"JSBreadCrumbsCSSSelectorVertical": {
+			"value": []
+		},
+		"JSBreadCrumbsGlobalMaxCrumbs": {
+			"value": 20
+		},
+		"SaneCaseAutofixSpecialCharBreak": {
+			"value": false,
+			"description": "Tries to fix automatically cut URLs at the presence of special characters."
+		}
+	},
+	"manifest_version": 2
+}
