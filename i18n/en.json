@@ -6,7 +6,7 @@
 			"Cindy Cicalese"
 		]
 	},
-	"jsbreadcrumbs-desc": "Combined fork of SaneCase and JSBreadCrumbs. Automatically redirect case mistakes, Adds a trail of bread crumbs below the tab bar",
+	"sanecrumbs-desc": "Combined fork of SaneCase and JSBreadCrumbs. Automatically redirect case mistakes, Adds a trail of bread crumbs below the tab bar",
 	"jsbreadcrumbs-horizontal-separator": " | ",
 	"jsbreadcrumbs-intro-horizontal": "Last {{PLURAL:$1|Page|$1 Pages}} Viewed:",
 	"jsbreadcrumbs-intro-vertical": "Last {{PLURAL:$1|Page|$1 Pages}} Viewed",
